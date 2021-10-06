@@ -20,10 +20,12 @@ urlpatterns = [
     # Admin module
     path('admin/', admin.site.urls),
 
+    # User Management: Django defaults
+    path('accounts/', include('django.contrib.auth.urls')),
+    # Local/Additional User Management: Accounts pages
+    path('accounts/', include('accounts.urls')),
+
     # Home page
-    path('', include('pages.urls'))
-
-    # Accounts pages
-
+    path('', include('pages.urls')),
 
 ]

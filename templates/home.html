@@ -4,11 +4,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
 </head>
 <body>
 {% block content %}
     <h1>Homepage</h1>
+    {% if user.is_authenticated %}
+        Hi {{ user.email }}!
+        <p><a href="{% url 'logout' %}">Log Out</a></p>
+    {% else %}
+        <p>You're not logged in.</p>
+        <a href="{% url 'login' %}">Log In</a>
+        <a href="{% url 'signup' %}">Sign Up</a>
+    {% endif %}
 {% endblock content %}
 </body>
 </html>
