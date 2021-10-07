@@ -21,9 +21,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # User Management: Django defaults
-    path('accounts/', include('django.contrib.auth.urls')),
+    # path('accounts/', include('django.contrib.auth.urls')),
+    # User Management: allauth defaults
+    path('accounts/', include('allauth.urls')),
+
     # Local/Additional User Management: Accounts pages
-    path('accounts/', include('accounts.urls')),
+    # path('accounts/', include('accounts.urls.py.NOTNEEDED')),
 
     # Home page
     path('', include('pages.urls')),
